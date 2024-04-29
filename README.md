@@ -33,12 +33,12 @@ import '@testing-library/jest-dom';
 
 export default defineConfig({
   ...
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './src/tests/setup.ts',
-    css: true
-  }
+    test: {
+        globals: true,
+        environment: 'jsdom',
+        setupFiles: './src/tests/setup.ts',
+        css: true
+    }
 })
 ```
 
@@ -46,12 +46,12 @@ export default defineConfig({
 
 ```tsx
 {
-	"compilerOptions": {
-		...
-		"types": ["vitest/globals"]
-	}
-	"include": [..., "src/tests/setup.ts"]
-	...
+    "compilerOptions": {
+    ...
+        "types": ["vitest/globals"]
+    },
+    "include": [..., "src/tests/setup.ts"]
+    ...
 }
 ```
 
@@ -61,7 +61,7 @@ export default defineConfig({
 import "./App.css";
 
 function App() {
-  return <>learn react</>;
+  return <>Hello world!</>;
 }
 
 export default App;
@@ -73,7 +73,7 @@ import App from "./App";
 
 test("App contains correct heading", () => {
   render(<App />);
-  const headingElement = screen.getByText(/learn react/);
+  const headingElement = screen.getByText("Hello world!");
   expect(headingElement).toBeInTheDocument();
 });
 ```

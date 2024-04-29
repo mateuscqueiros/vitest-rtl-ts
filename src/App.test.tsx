@@ -3,6 +3,6 @@ import App from "./App";
 
 test("App contains correct heading", () => {
   render(<App />);
-  const headingElement = screen.getByText(/learn react/);
+  const headingElement = screen.getByText(/Hello world/);
   expect(headingElement).toBeInTheDocument();
 });
